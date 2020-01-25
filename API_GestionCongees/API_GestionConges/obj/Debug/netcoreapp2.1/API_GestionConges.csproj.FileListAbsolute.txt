@@ -1,0 +1,28 @@
+C:\Users\charfaoui\Desktop\gestion de congee\API_GestionCongees\API_GestionConges\bin\Debug\netcoreapp2.1\API_GestionConges.deps.json
+C:\Users\charfaoui\Desktop\gestion de congee\API_GestionCongees\API_GestionConges\bin\Debug\netcoreapp2.1\API_GestionConges.runtimeconfig.json
+C:\Users\charfaoui\Desktop\gestion de congee\API_GestionCongees\API_GestionConges\bin\Debug\netcoreapp2.1\API_GestionConges.runtimeconfig.dev.json
+C:\Users\charfaoui\Desktop\gestion de congee\API_GestionCongees\API_GestionConges\bin\Debug\netcoreapp2.1\API_GestionConges.dll
+C:\Users\charfaoui\Desktop\gestion de congee\API_GestionCongees\API_GestionConges\bin\Debug\netcoreapp2.1\API_GestionConges.pdb
+C:\Users\charfaoui\Desktop\gestion de congee\API_GestionCongees\API_GestionConges\obj\Debug\netcoreapp2.1\API_GestionConges.csprojAssemblyReference.cache
+C:\Users\charfaoui\Desktop\gestion de congee\API_GestionCongees\API_GestionConges\obj\Debug\netcoreapp2.1\API_GestionConges.csproj.CoreCompileInputs.cache
+C:\Users\charfaoui\Desktop\gestion de congee\API_GestionCongees\API_GestionConges\obj\Debug\netcoreapp2.1\API_GestionConges.RazorAssemblyInfo.cache
+C:\Users\charfaoui\Desktop\gestion de congee\API_GestionCongees\API_GestionConges\obj\Debug\netcoreapp2.1\API_GestionConges.RazorAssemblyInfo.cs
+C:\Users\charfaoui\Desktop\gestion de congee\API_GestionCongees\API_GestionConges\obj\Debug\netcoreapp2.1\API_GestionConges.AssemblyInfoInputs.cache
+C:\Users\charfaoui\Desktop\gestion de congee\API_GestionCongees\API_GestionConges\obj\Debug\netcoreapp2.1\API_GestionConges.AssemblyInfo.cs
+C:\Users\charfaoui\Desktop\gestion de congee\API_GestionCongees\API_GestionConges\obj\Debug\netcoreapp2.1\API_GestionConges.RazorTargetAssemblyInfo.cache
+C:\Users\charfaoui\Desktop\gestion de congee\API_GestionCongees\API_GestionConges\obj\Debug\netcoreapp2.1\API_GestionConges.dll
+C:\Users\charfaoui\Desktop\gestion de congee\API_GestionCongees\API_GestionConges\obj\Debug\netcoreapp2.1\API_GestionConges.pdb
+C:\Users\charfaoui\Desktop\gestiondecongee\API_GestionCongees\API_GestionConges\bin\Debug\netcoreapp2.1\API_GestionConges.deps.json
+C:\Users\charfaoui\Desktop\gestiondecongee\API_GestionCongees\API_GestionConges\bin\Debug\netcoreapp2.1\API_GestionConges.runtimeconfig.json
+C:\Users\charfaoui\Desktop\gestiondecongee\API_GestionCongees\API_GestionConges\bin\Debug\netcoreapp2.1\API_GestionConges.runtimeconfig.dev.json
+C:\Users\charfaoui\Desktop\gestiondecongee\API_GestionCongees\API_GestionConges\bin\Debug\netcoreapp2.1\API_GestionConges.dll
+C:\Users\charfaoui\Desktop\gestiondecongee\API_GestionCongees\API_GestionConges\bin\Debug\netcoreapp2.1\API_GestionConges.pdb
+C:\Users\charfaoui\Desktop\gestiondecongee\API_GestionCongees\API_GestionConges\obj\Debug\netcoreapp2.1\API_GestionConges.csprojAssemblyReference.cache
+C:\Users\charfaoui\Desktop\gestiondecongee\API_GestionCongees\API_GestionConges\obj\Debug\netcoreapp2.1\API_GestionConges.csproj.CoreCompileInputs.cache
+C:\Users\charfaoui\Desktop\gestiondecongee\API_GestionCongees\API_GestionConges\obj\Debug\netcoreapp2.1\API_GestionConges.RazorAssemblyInfo.cache
+C:\Users\charfaoui\Desktop\gestiondecongee\API_GestionCongees\API_GestionConges\obj\Debug\netcoreapp2.1\API_GestionConges.RazorAssemblyInfo.cs
+C:\Users\charfaoui\Desktop\gestiondecongee\API_GestionCongees\API_GestionConges\obj\Debug\netcoreapp2.1\API_GestionConges.AssemblyInfoInputs.cache
+C:\Users\charfaoui\Desktop\gestiondecongee\API_GestionCongees\API_GestionConges\obj\Debug\netcoreapp2.1\API_GestionConges.AssemblyInfo.cs
+C:\Users\charfaoui\Desktop\gestiondecongee\API_GestionCongees\API_GestionConges\obj\Debug\netcoreapp2.1\API_GestionConges.RazorTargetAssemblyInfo.cache
+C:\Users\charfaoui\Desktop\gestiondecongee\API_GestionCongees\API_GestionConges\obj\Debug\netcoreapp2.1\API_GestionConges.dll
+C:\Users\charfaoui\Desktop\gestiondecongee\API_GestionCongees\API_GestionConges\obj\Debug\netcoreapp2.1\API_GestionConges.pdb

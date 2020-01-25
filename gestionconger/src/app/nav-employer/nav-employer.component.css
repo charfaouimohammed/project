@@ -1,0 +1,29 @@
+.navbar .form-inline #i1{
+    outline: none;
+    
+}
+.form-inline{
+    margin-left: 750px;
+    float: right;
+}
+.sec .active{
+    background-color: gray;
+}
+
+section ul li a{
+text-decoration: none;
+list-style-type:none;
+list-style: none;
+margin-top:90px;
+}
+section ul li{
+    list-style-type:none;
+    list-style: none;
+}
+section button a{
+    text-decoration: none;
+    font-size: 13px;
+}
+
+
+

@@ -1,0 +1,37 @@
+<app-nav-employer></app-nav-employer>
+<div style="float: right;margin-right:50px;margin-top: -550px;">
+  <button mat-flat-button></button>
+  <button class="btn-danger" style="float: right;outline: none;" mat-raised-button color="warn" data-toggle="modal" data-target="#myModal2">Delete</button><br><br>
+  <ag-grid-angular
+  style="width: 1005px; height: 400px;"
+  class="ag-theme-balham"
+  [rowData]="listCongess"
+  [columnDefs]="columnDefs"
+ 
+ [enableSorting]="true" [enableFilter]="true"  [columnDefs]="columnDefs"  
+ (gridReady)="onGridReady($event)" 
+ [paginationAutoPageSize]="true"
+ [animateRows]="true"
+ [pagination]="true" 
+ (selectionChanged)="onSelectionChanged($event)"
+ >
+</ag-grid-angular>
+</div>
+ <!------------------------------------Delete()--------------------------------------------->
+ <div id="myModal2" class="modal fade " role="dialog">
+  <div class="modal-dialog modal-sm">
+       <div *ngFor="let item of StObjet"  class="modal-content">
+          <div  class="modal-body">
+           <img style="width:100px;margin-left: 80px;" src="assets/images/exclamation-512.png"/><br><br>
+           <p style="font-weight: bold;color:black;font-size: 13px;margin-left:34px;">Are you sure , you want delete </p>
+           <p style="font-weight: normal;font-size: 14px;margin-left: 120px;">N° : {{item.idConger}}</p>
+          </div> 
+          <div class="modal-footer">
+           <button style="margin-right:10px;outline: none;" mat-raised-button  type="button" #closeBtn  data-dismiss="modal">Close </button>
+           <button class="btn-danger" (click)="delete(item.idConger)" style="outline: none;" mat-raised-button color="warn"   type="button">Delete</button>
+         </div>
+       </div>
+ </div>
+</div>
+   
+      
