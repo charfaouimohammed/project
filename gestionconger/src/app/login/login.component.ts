@@ -22,16 +22,16 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
   
-  list:Emp[];
+  list:Emp;
+  tes:string;
   n=0;
   connecter(formData: NgForm){
     this.obj.Username=formData.value.Username;
     this.obj.Passworld=formData.value.Passworld;
-    console.log(this.obj.Passworld,this.obj.Passworld);
-    this.service.getEmp().subscribe((temp)=>{
-      this.list=temp;
-     console.log("this list",this.list);
-    });
+    this.service.getUserByUsername(this.obj.Username).subscribe((res)=>{
+      this.list=res;
+      console.log("lghjh",this.list);
+    })
    
   }
  

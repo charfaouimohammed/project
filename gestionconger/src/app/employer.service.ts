@@ -22,7 +22,9 @@ errorData:{};
 isLoggedIn=false;
 redirectUrl:string;
 
-
+getUserByUsername(userName:string){
+  return this.http.get<Emp>(this.url+'Emploiyes/ByUserName/'+userName);
+}
 private handleError<T> (operation = 'operation', result?: T) {
   return (error: any): Observable<T> => {
 
@@ -78,6 +80,7 @@ signup(formData:NgForm):Observable<Employer>{
     if (this.isloggedIn) {
       return JSON.parse(localStorage.getItem('currentEmployer'));
     }
+    
   }
   
  

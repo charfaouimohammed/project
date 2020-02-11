@@ -1,13 +1,9 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import{
-  MatButtonModule,
-  MatFormField,
-  MatInputModule
-}from '@angular/material';
+import { CommonModule } from '@angular/common'
+import{ MatButtonModule,MatFormFieldModule,MatInputModule}from '@angular/material';
 const material=[
   MatButtonModule,
-  MatFormField,
+  MatFormFieldModule,
   MatInputModule
 ]
 
@@ -19,6 +15,6 @@ const material=[
     CommonModule,
     material
   ],
-  exports:[material]
+  exports:[material],
 })
 export class MaterialModuleModule { }

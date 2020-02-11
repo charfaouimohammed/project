@@ -1,0 +1,14 @@
+<app-nav-employer></app-nav-employer>
+<div style="float: right;margin-right:50px;margin-top: -550px;">
+
+    <ag-grid-angular
+    style="width: 1005px; height: 400px;"
+    class="ag-theme-balham"
+    [rowData]="listCongess"
+    [columnDefs]="columnDefs"
+   [enableSorting]="true" [enableFilter]="true"  [columnDefs]="columnDefs"  
+   [paginationAutoPageSize]="true"
+   [animateRows]="true"
+   [pagination]="true" >
+  </ag-grid-angular>
+  </div>

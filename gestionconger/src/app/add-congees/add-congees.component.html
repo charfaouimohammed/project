@@ -1,3 +1,43 @@
 <app-nav-employer></app-nav-employer>
-<p>add-congees works!</p>
-
+<form  [formGroup]="myForm">
+  <div style="float: right;margin-right:-300px;margin-top: -550px;" class="container">
+    <mat-form-field style="width: 500px;">
+      <input formControlName="idConger"   matInput placeholder="ID Congee">
+    </mat-form-field><br>
+  
+    <mat-form-field style="width: 500px;">
+      <input formControlName="dateDebut" matInput [matDatepicker]="picker" placeholder="Date Debut">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field><br>
+  
+    <mat-form-field style="width: 500px;">
+      <input formControlName="dateFin" matInput [matDatepicker]="picker1" placeholder="Date Fin">
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field><br>
+  
+    <mat-form-field style="width: 500px;">
+      <input formControlName="statut" matInput placeholder="Statut">
+    </mat-form-field><br>
+  
+    <mat-form-field style="width: 500px;">
+      <textarea formControlName="justification"  matInput placeholder="Justification "></textarea>
+    </mat-form-field><br>
+  
+    <mat-form-field style="width: 500px;">
+      <input formControlName="idEploye" matInput placeholder="ID Employee">
+    </mat-form-field><br>
+  
+    <mat-form-field style="width: 500px;">
+      <input formControlName="idAdmine"  matInput placeholder="ID Admin">
+    </mat-form-field><br>
+  
+    <br>
+    <button  (click)="Add()" mat-raised-button color="primary" type="submit" *ngIf="showInsert">Insert</button>
+    
+    <button  style="margin-left: 15px;" (click)="Modif()" mat-raised-button color="primary" type="submit" *ngIf="!showInsert">update</button>
+  </div>
+  
+  
+</form>

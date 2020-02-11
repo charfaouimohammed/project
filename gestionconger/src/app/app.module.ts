@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { IntroComponent } from './intro/intro.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { HeaderComponent } from './header/header.component';
 import { DescriptionComponent } from './description/description.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
@@ -18,16 +17,20 @@ import{HttpClientModule} from '@angular/common/http'
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 import{AgGridModule} from 'ag-grid-angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import{MatButtonModule} from '@angular/material';
 import { NavEmployerComponent } from './nav-employer/nav-employer.component';
-import { AddCongeesComponent } from './add-congees/add-congees.component';
+import { AddCongeesComponent} from './add-congees/add-congees.component';
+import {MatButtonModule,
+  MatFormFieldModule,
+  MatInputModule,
+MatDatepickerModule,MatNativeDateModule} from '@angular/material';
+import { AdminsComponent } from './admins/admins.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     IntroComponent,
-    NavbarComponent,
     HeaderComponent,
     DescriptionComponent,
     TestimonialsComponent,
@@ -38,7 +41,9 @@ import { AddCongeesComponent } from './add-congees/add-congees.component';
     LoginComponent,
     EmployerComponent,
     NavEmployerComponent,
-    AddCongeesComponent
+    AddCongeesComponent,
+    AdminsComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -48,7 +53,10 @@ import { AddCongeesComponent } from './add-congees/add-congees.component';
     ReactiveFormsModule,
     AgGridModule.withComponents([]),
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]

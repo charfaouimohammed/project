@@ -1,10 +1,13 @@
-import { Component, OnInit, Input,  } from '@angular/core';
+import { Component, OnInit, Input, Output, ViewChild, EventEmitter } from '@angular/core';
 import { Employer } from '../employer';
 import { GridApi, ColumnApi } from 'ag-grid-community';
 import { EmployerService } from '../employer.service';
 import { Congee } from '../congee';
 import { CongeeService } from '../congee.service';
 import {MatButtonModule} from '@angular/material'
+import { AddCongeesComponent } from '../add-congees/add-congees.component';
+import { Router } from '@angular/router';
+
 export{
   MatButtonModule
 }
@@ -16,35 +19,36 @@ export{
   styleUrls: ['./employer.component.css']
 })
 export class EmployerComponent implements OnInit {
-
-  constructor(private service:CongeeService,private ser:EmployerService) { 
+  constructor(private service:CongeeService,private ser:EmployerService, private router:Router) { 
   }
+  $congees=new EventEmitter();
     /***********************test if row is selected or not******************************** */
     tes:string;
     StObjet:Congee[];
     private rowSelection;
+    isMultiple:boolean = false;
     private SelectedClient:Congee;
      IsRowSelected: boolean = false;
-    IsMultiple: boolean = false;
+    IsMultiple: boolean = true;
     onSelectionChanged(event) {
       if (this.api.getSelectedRows().length == 0) {
         this.IsRowSelected = false;
+        this.isMultiple = true
       } else {
         this.IsRowSelected = true;
         this.StObjet=this.api.getSelectedRows();
+            this.id=this.api.getSelectedRows()[0].idConger;
+           console.log("id again:",this.id);
       }
-      if (this.api.getSelectedRows().length != 1) {
-        this.IsMultiple = true;
-      } else {
-        this.IsMultiple = false;
-      }
-    }
-    /********************Delete******************* */
+  }
+  id:number;
+  list2:string;
+    /********************Delete*******************h */
     delete(id:number){
       this.service.delete(id).subscribe(res=>{
+        this.loadData();
         alert("suppression bien faite");
       })
-
     }
     /****************Dif************************* */
   columnDefs = [
@@ -89,5 +93,14 @@ onGridReady(params):void{
 }
   ngOnInit() {
     this.loadData();
+  }
+  /***************************update *****************************h*/
+  modif(){
+    if (this.id==null) {
+      alert("choose congee !!!!!");
+    }else{
+      this.router.navigate(['addCongees/',this.id]);
+
+    }
   }
 }

@@ -10,15 +10,13 @@ import { CommonModule } from '@angular/common';
 import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
 import { EmployerComponent } from './employer/employer.component';
-import { NavbarComponent } from './navbar/navbar.component';
+
 import { AddCongeesComponent } from './add-congees/add-congees.component';
+import { AdminsComponent } from './admins/admins.component';
 
 
 const routes: Routes = [
  
- // { path: '',
-  //component:NavbarComponent,
-  //pathMatch: 'full'},
 
   { path:'home',
     redirectTo:'',
@@ -45,7 +43,7 @@ const routes: Routes = [
   component:CountactComponent,
   pathMatch:'full'},
  
-  {path:'signup',
+  {path:'signin',
   component:SigninComponent,
   pathMatch:'full'},
  
@@ -60,11 +58,18 @@ const routes: Routes = [
   {path:'employer',
   component:EmployerComponent,
   pathMatch:'full'},
-  
+
   {path:'addCongees',
   component:AddCongeesComponent,
   pathMatch:'full'},
+  
+  {path:'addCongees/:id',
+  component:AddCongeesComponent,
+  pathMatch:'full'},
  
+  {path:'admin',
+  component:AdminsComponent,
+  pathMatch:'full'},
   
 
 ];
