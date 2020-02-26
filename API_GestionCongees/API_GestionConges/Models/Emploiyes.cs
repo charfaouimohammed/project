@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace API_GestionConges.Models
 {
@@ -17,7 +18,8 @@ namespace API_GestionConges.Models
         public string Username { get; set; }
         public string Passworld { get; set; }
         public string Tel { get; set; }
-
+        [NotMapped]
+        public bool IsAdmin { get; set; }
         public ICollection<Congees> Congees { get; set; }
     }
 }

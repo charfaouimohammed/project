@@ -1,58 +1,41 @@
-<br>
-<br>
-<br>
-
-
-
-<div class="container" id="container">
-	<div class="form-container sign-up-container">
-		<form action="#">
-			<h3>Create Account</h3>
-			<!-- <div class="social-container">
-				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-			</div> -->
-			
-			<input  type="text" placeholder="Nom" />
-			<input type="text" placeholder="Prenom" />
-			<input type="text" placeholder="post" />
-			<input type="email" placeholder="email" />
-			<input type="text" placeholder="Username" />
-			<input type="password" placeholder="Password" />
-            <button > Sign Up</button>
-		</form>
-	</div>
-	<div class="form-container sign-in-container">
-		<form action="#">
-			<h1>Sign in</h1>
-			<!-- <div class="social-container">
-				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
-				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
-				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
-			</div> -->
-			<span>or use your account</span>
-			<input type="text" placeholder="Username" />
-			<input type="password" placeholder="Password" />
-			<a href="#">Forgot your password?</a>
-			<button>Sign In</button>
-		</form>
-	</div>
-	<div class="overlay-container">
-		<div class="overlay">
-			<div class="overlay-panel overlay-left">
-				<h1>Welcome Back!</h1>
-				
-				<button class="ghost" onclick="ch2()" id="signIn">Sign In</button>
-			</div>
-			<div class="overlay-panel overlay-right">
-				<h1>Hello, Friend!</h1>
-				<br/>
-				<button class="ghost" onclick="ch()" id="signUp">Sign Up</button>
+	
+		<div class="wrapper" style="background-image: url('assets/singin/images/signup-bg.jpg');">
+			<div class="inner">
+				<div class="image-holder">
+					<img src="assets/images/images3.jpg" alt="">
+				</div>
+				<form action="">
+					<h3>Registration Form</h3>
+					<div class="form-group">
+						<input type="text" formControlName="nom" placeholder="First Name" class="form-control">
+						<input type="text" formControlName="prenom" placeholder="Last Name" class="form-control">
+					</div>
+					<div class="form-wrapper">
+						<input type="text" formControlName="Username" placeholder="Username" class="form-control">
+						<i class="zmdi zmdi-account"></i>
+					</div>
+					<div class="form-wrapper">
+						<input type="text"formControlName="post" placeholder="post" class="form-control">
+						<i class="zmdi zmdi-account"></i>
+					</div>
+					<div class="form-wrapper">
+						<input type="text"formControlName="tel" placeholder="phoneNumber" class="form-control">
+						<i class="zmdi zmdi-account"></i>
+					</div>
+					
+					<div class="form-wrapper">
+						<input type="password"formControlName="passworld" placeholder="Password" class="form-control">
+						<i class="zmdi zmdi-lock"></i>
+					</div>
+					<div class="form-wrapper">
+						<input type="password" placeholder="Confirm Password" class="form-control">
+						<i class="zmdi zmdi-lock"></i>
+					</div>
+					<button>Register
+						<i class="zmdi zmdi-arrow-right"></i>
+					</button>
+				</form>
 			</div>
 		</div>
-	</div>
-</div>
-
-
-
+		
+	

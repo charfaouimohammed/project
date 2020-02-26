@@ -23,7 +23,7 @@ export{
 })
 export class AddCongeesComponent implements OnInit {
   
-  @Input() listCongee:Congee=new Congee();
+  @Input() listCongee:Congee[];
   @Input() test=false;
 
   myForm =new FormGroup({
@@ -57,14 +57,21 @@ export class AddCongeesComponent implements OnInit {
         }
       );
     }
-
+  }
+  listCongees:Congee[]
+  show(){
+    this.service.getCongee().subscribe(res=>{
+      this.listCongees=res;
+      console.log("liste",this.listCongees)
+    })
   }
   Add(){
     var conger=this.myForm.value as Congee
     console.log('conger',conger);
     this.service.AddCongees(conger).subscribe(result=>{
       console.log('res conger',result);
-      this.loadData()
+      this.show();
+      console.log("data",this.show())
     })
   }
 
@@ -72,7 +79,6 @@ export class AddCongeesComponent implements OnInit {
     console.log("form",this.myForm.value);
     var conger=this.myForm.value as Congee
     console.log("congee :",conger);
-
     this.service.EditCongees(conger).subscribe(res=>{
       this.loadData();
       alert("product category modifier sucssfully");

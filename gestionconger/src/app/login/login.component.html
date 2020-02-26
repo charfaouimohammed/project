@@ -8,6 +8,7 @@
 
 <div class="container">
     <div class="img">
+
         <img src="assets/img/bg.svg">
     </div>
     <div class="login-content"> 
@@ -30,7 +31,7 @@
                        <input type="password"  id="Passworld"  [(ngModel)]="obj.Passworld" #Passworld="ngModel"  name="Passworld"  placeholder="Password" class="input">
                </div>
             </div>
-            <input type="checkbox" style="margin: -50px 12px -200px -200px;" > admin
+            <input [(ngModel)]="obj.isAdmin"  #isAdmin="ngModel"  name="isAdmin" type="checkbox" style="margin: -50px 12px -200px -200px;" > admin
             <a href="#">Forgot Password?</a>
             <input type="submit" class="btn" value="Login">
         </form> 

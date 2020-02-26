@@ -21,12 +21,26 @@ namespace API_GestionConges.Controllers
         {
             _context = context;
         }
-
-        // GET: api/Congees
+        // GET: api/Congeese
         [HttpGet]
-        public IEnumerable<Congees> GetCongees()
+        public IEnumerable<Congees> GetConges()
         {
             return _context.Congees;
+        }
+        // GET: api/Congees
+        [HttpGet]
+        public List<Congees> GetCongees()
+        {
+            var emploiyes = _context.Congees.Include("IdEployeNavigation").ToList();
+            // emploiyes = _context.Emploiyes.ToList();
+
+            foreach (Congees item in emploiyes)
+            {
+                item.EmployeName = item.IdEmployeNavigation.Nom + " " + item.IdEmployeNavigation.Prenom;
+                item.EmployeTel = item.IdEmployeNavigation.Tel;
+            }
+
+            return emploiyes;
         }
 
         // GET: api/Congees/5
@@ -48,6 +62,24 @@ namespace API_GestionConges.Controllers
             return Ok(congees);
         }
 
+        // GET: api/Congees/byEmploye/2
+        [HttpGet("byEmploye/{IdEmploye}")]
+        public IActionResult GetCongeesByEmploye([FromRoute] int IdEmploye)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var conge = _context.Congees.Where(c => c.IdEmploye == IdEmploye);
+
+            if (conge == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(conge);
+        }
         // PUT: api/Congees/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCongees([FromRoute] int id, [FromBody] Congees congees)
@@ -120,7 +152,7 @@ namespace API_GestionConges.Controllers
                 return BadRequest(ModelState);
             }
 
-            var emp = _context.Congees.Where(c => c.IdEploye == IdEploye);
+            var emp = _context.Congees.Where(c => c.IdEmploye == IdEploye);
 
             if (emp == null)
             {

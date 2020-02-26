@@ -6,7 +6,9 @@ import { Congee } from '../congee';
 import { CongeeService } from '../congee.service';
 import {MatButtonModule} from '@angular/material'
 import { AddCongeesComponent } from '../add-congees/add-congees.component';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { User } from '../user';
+import { Emp } from '../emp';
 
 export{
   MatButtonModule
@@ -19,7 +21,8 @@ export{
   styleUrls: ['./employer.component.css']
 })
 export class EmployerComponent implements OnInit {
-  constructor(private service:CongeeService,private ser:EmployerService, private router:Router) { 
+  constructor(private service:CongeeService,private ser:EmployerService, private router:Router,
+    private rout:ActivatedRoute) { 
   }
   $congees=new EventEmitter();
     /***********************test if row is selected or not******************************** */
@@ -76,7 +79,7 @@ export class EmployerComponent implements OnInit {
 ];
 listCongess:Congee[];
 loadData(){
-  this.service.getCongees(1).subscribe((temp)=>{
+  this.service.getCongeesByEmployeId(this.employeId).subscribe((temp)=>{
     this.listCongess=temp;
     console.log("this.list",this.listCongess);
   });
@@ -91,8 +94,14 @@ onGridReady(params):void{
   this.api.sizeColumnsToFit();
   this.loadData();
 }
+employeId
   ngOnInit() {
+    this.employeId = this.rout.snapshot.paramMap.get('id');
+    console.log("employe Id : ",this.employeId);
     this.loadData();
+    this.getEmpbyUser();
+    
+
   }
   /***************************update *****************************h*/
   modif(){
@@ -103,4 +112,19 @@ onGridReady(params):void{
 
     }
   }
+  Empl:Employer
+  getEmpbyUser(){
+    if(this.user==null){
+
+    }else{
+      this.ser.getUserByUsername(this.user).subscribe((res)=>{
+        this.Empl=res;
+        console.log("id Employer fro mloing",this.Empl.nom)
+        console.log("Emp",this.Empl)
+      })
+    }
+    
+  }
+  user=localStorage.getItem("UserName");
+ 
 }

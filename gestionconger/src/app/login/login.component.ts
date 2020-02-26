@@ -14,25 +14,51 @@ import { Emp } from '../emp';
 })
 export class LoginComponent implements OnInit {
   @Input() obj=new Emp();
-  router: any;
-  constructor(private service:EmployerService) { }
+
+  constructor(private service:EmployerService,private router: Router) { }
     
   
 
   ngOnInit() {
+    // if(localStorage.getItem('token')!=null)
+    // {
+    //   this.router.navigateByUrl('/employer');
+    // }
   }
   
-  list:Emp;
   tes:string;
   n=0;
-  connecter(formData: NgForm){
-    this.obj.Username=formData.value.Username;
-    this.obj.Passworld=formData.value.Passworld;
-    this.service.getUserByUsername(this.obj.Username).subscribe((res)=>{
-      this.list=res;
-      console.log("lghjh",this.list);
+  connecter(formData: NgForm){ 
+    var employer=new Employer();
+    employer.username=formData.value.Username;
+    employer.passworld=formData.value.Passworld;
+    employer.isAdmin=formData.value.isAdmin;
+
+    console.log("obj",employer);
+    this.service.login(employer,'Emploiyes').subscribe((res)=>{
+     
+      
+      console.log("result",res);
+      if(res!=null)
+      {
+        if(employer.isAdmin)
+        {
+          localStorage.setItem("UserName",formData.value.Username)
+          this.router.navigate(['/admin']);
+        }
+        else
+        {
+           console.log("id user : ",res.idEmploiye)
+           var user = formData.value as Employer
+          //localStorage.setItem("UserName",user.username)
+          this.router.navigate(['/employer',res.idEmploiye]);
+        }
+       
+      }
+      
     })
    
   }
+  
  
 }

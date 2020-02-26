@@ -82,7 +82,7 @@ namespace API_GestionConges.Models
 
                 entity.Property(e => e.IdAdmine).HasColumnName("ID_Admine");
 
-                entity.Property(e => e.IdEploye).HasColumnName("ID_Eploye");
+                entity.Property(e => e.IdEmploye).HasColumnName("ID_Eploye");
 
                 entity.Property(e => e.Justification)
                     .HasColumnName("justification")
@@ -99,9 +99,9 @@ namespace API_GestionConges.Models
                     .HasForeignKey(d => d.IdAdmine)
                     .HasConstraintName("FK__congees__ID_Admi__1FCDBCEB");
 
-                entity.HasOne(d => d.IdEployeNavigation)
+                entity.HasOne(d => d.IdEmployeNavigation)
                     .WithMany(p => p.Congees)
-                    .HasForeignKey(d => d.IdEploye)
+                    .HasForeignKey(d => d.IdEmploye)
                     .HasConstraintName("FK__congees__ID_Eplo__1ED998B2");
             });
 

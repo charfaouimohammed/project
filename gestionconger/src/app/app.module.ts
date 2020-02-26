@@ -24,6 +24,9 @@ import {MatButtonModule,
   MatInputModule,
 MatDatepickerModule,MatNativeDateModule} from '@angular/material';
 import { AdminsComponent } from './admins/admins.component';
+import { NavAdminComponent } from './nav-admin/nav-admin.component';
+
+
 
 
 
@@ -43,7 +46,9 @@ import { AdminsComponent } from './admins/admins.component';
     NavEmployerComponent,
     AddCongeesComponent,
     AdminsComponent,
-  
+    NavAdminComponent,
+
+    
   ],
   imports: [
     BrowserModule,

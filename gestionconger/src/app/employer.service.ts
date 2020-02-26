@@ -23,7 +23,7 @@ isLoggedIn=false;
 redirectUrl:string;
 
 getUserByUsername(userName:string){
-  return this.http.get<Emp>(this.url+'Emploiyes/ByUserName/'+userName);
+  return this.http.get<Employer>(this.url+'Emploiyes/ByUserName/'+userName);
 }
 private handleError<T> (operation = 'operation', result?: T) {
   return (error: any): Observable<T> => {
@@ -38,7 +38,10 @@ private handleError<T> (operation = 'operation', result?: T) {
 }
 /******************Get Employer********************* */
 getEmp(){
-  return this.http.get<Emp[]>(this.url+'Emploiyes');
+  return this.http.get<Employer[]>(this.url+'Emploiyes/');
+}
+getEmpById(id:number){
+  return this.http.get<Employer>(this.url+id);
 }
 
   constructor(private http:HttpClient,private router:Router) {  }
@@ -50,16 +53,17 @@ signup(formData:NgForm):Observable<Employer>{
   )
 
 }
-  login(formData: NgForm){   
-    return this.http.post<any>(`${this.url}/login`, formData).pipe(
+  login(obj: Employer, conrollerName:string){   
+    return this.http.post<any>(`${this.url}/${conrollerName}/login`, obj).pipe(
       tap(Emp => {
-        if(Emp && Emp.token){
+        if(Emp!=null){
+          console.log("hellp",Emp);
           localStorage.setItem('currentEmployer',JSON.stringify(Emp));
         }else{
           console.log("n'est pas connecer");
         }
       }),
-      catchError(this.handleError('signup',[]))
+      catchError(this.handleError('signup',null))
     );
   }
   logout() {
@@ -81,6 +85,10 @@ signup(formData:NgForm):Observable<Employer>{
       return JSON.parse(localStorage.getItem('currentEmployer'));
     }
     
+  }
+  getEmpByIdCongee(id){
+     this.http.get<Emp[]>(this.url+'/Emploiyes/',id)
+
   }
   
  

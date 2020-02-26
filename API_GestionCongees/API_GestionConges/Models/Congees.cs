@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace API_GestionConges.Models
 {
@@ -10,10 +11,16 @@ namespace API_GestionConges.Models
         public DateTime? DateFin { get; set; }
         public string Statut { get; set; }
         public string Justification { get; set; }
-        public int? IdEploye { get; set; }
+        public int? IdEmploye { get; set; }
         public int? IdAdmine { get; set; }
-
         public Admines IdAdmineNavigation { get; set; }
-        public Emploiyes IdEployeNavigation { get; set; }
+        public Emploiyes IdEmployeNavigation { get; set; }
+
+        [NotMapped]
+        public string EmployeName { get; set; }
+
+        [NotMapped]
+        public string EmployeTel { get; set; }
+
     }
 }

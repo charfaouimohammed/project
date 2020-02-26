@@ -15,6 +15,7 @@ import { AddCongeesComponent } from './add-congees/add-congees.component';
 import { AdminsComponent } from './admins/admins.component';
 
 
+
 const routes: Routes = [
  
 
@@ -55,7 +56,7 @@ const routes: Routes = [
   component:AboutComponent,
   pathMatch:'full'},
   
-  {path:'employer',
+  {path:'employer/:id',
   component:EmployerComponent,
   pathMatch:'full'},
 
@@ -70,6 +71,8 @@ const routes: Routes = [
   {path:'admin',
   component:AdminsComponent,
   pathMatch:'full'},
+
+  
   
 
 ];

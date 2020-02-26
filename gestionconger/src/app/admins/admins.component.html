@@ -1,14 +1,81 @@
-<app-nav-employer></app-nav-employer>
-<div style="float: right;margin-right:50px;margin-top: -550px;">
+<app-nav-admin></app-nav-admin>
 
+<!-- <button mat-raised-button color="primary">Show</button> -->
+<div style="float: right;margin-right:50px;margin-top: -550px;">
     <ag-grid-angular
     style="width: 1005px; height: 400px;"
     class="ag-theme-balham"
     [rowData]="listCongess"
     [columnDefs]="columnDefs"
-   [enableSorting]="true" [enableFilter]="true"  [columnDefs]="columnDefs"  
+    (gridReady)="onGridReady($event)" 
+    (selectionChanged)="onSelectionChanged($event)"
+    [enableSorting]="true" [enableFilter]="true"  [columnDefs]="columnDefs"  
    [paginationAutoPageSize]="true"
    [animateRows]="true"
    [pagination]="true" >
   </ag-grid-angular>
   </div>
+  <!-- Button trigger modal -->
+<button style="margin-left: 21%;margin-top: -20%;"  type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" >
+  Aficher les donner
+ </button>
+  
+  <!-- Modal -->
+  <div *ngFor="let item of StObjet" class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div  class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div  class="modal-body">
+         <img src="assets/imgEmploye/3.jpg"style="margin-top:10px;height:90px;">
+         
+          <hr width="50%"  align=left>
+        <label >Id: {{item.idConger}}</label> 
+         <hr width="50%"  align=left>
+         <label >Nom et Prenom: {{item.employeName}}</label>
+         <hr width="50%"  align=left>
+         <label >Nom et Prenom: {{item.employeTel}}</label>
+         <hr width="50%"  align=left>
+         <label >DateDebut: {{item.dateDebut }}</label> 
+         <hr width="50%"  align=left>
+         <label >DateFin: {{item.dateFin }}</label>
+         <hr width="50%"  align=left>
+         <label >Statut: {{item.statut}}</label>
+         <hr width="50%"  align=left>
+         <label >Jistification: {{item.justification}}</label>
+        
+        </div>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap" style="color:darkturquoise;background-color: #002f49;">response</button>
+
+        <button type="button" mat-raised-button data-dismiss="modal" style="color:darkturquoise;background-color: #002f49;">Close</button>
+      </div>
+    </div>
+  </div>
+  
+ <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="myForm">
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">statut:</label>
+            <input formControlName="statut" type="text" class="form-control" id="recipient-name">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">justification:</label>
+            <textarea formControlName="justification" class="form-control" id="message-text"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="send()">Send message</button>
+      </div>
+    </div>
+  </div>
+</div>
+  

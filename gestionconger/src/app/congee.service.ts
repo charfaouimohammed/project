@@ -6,11 +6,14 @@ import { Congee } from './congee';
   providedIn: 'root'
 })
 export class CongeeService {
-  url:string="https://localhost:44390/api/Congees/";
+  url:string="https://localhost:44390/api/Congees";
   constructor(private http:HttpClient) { }
   /*******************Get Congess*************************** */
-  getCongees(id:number){
-    return this.http.get<Congee[]>(this.url+"/ByIdEploye/"+id);
+  getCongees(){
+    return this.http.get<Congee[]>(this.url);//+"/ByIdEploye/"+1
+  }
+  getCongeesByEmployeId(idEmp){
+    return this.http.get<Congee[]>(this.url+'/ByIdEploye/'+idEmp);
   }
   /*******************Get all Congess*************************** */
   getCongee(){
@@ -23,14 +26,14 @@ export class CongeeService {
  AddCongees(Co:Congee) {
   const headers = new HttpHeaders().set('content-type', 'application/json');
   var body = {
-    DateDebut: Co.dateDebut, DateFin:Co.dateFin,Statut:Co.statut,Justification:Co.justification,IdEploye:Co.idEploye,IdAdmine:Co.idAdmine,IdConger:Co.idConger
+    dateDebut: Co.dateDebut, dateFin:Co.dateFin,statut:Co.statut,justification:Co.justification,idEploye:Co.idEploye,idAdmine:Co.idAdmine,idConger:Co.idConger
   }
   return this.http.post<Congee>(this.url, body, { headers })
 }
-/****************** ***Edit Product Category*******************/   
+/****************** modif***Edit Product Category*******************/   
 EditCongees(Co:Congee) {
   console.log("Congee id : ",Co.idConger);
-  const params = new HttpParams().set('IdConger',Co.idConger);
+  const params = new HttpParams().set('IdConger',Co.idConger+'');
   const headers = new HttpHeaders().set('content-type', 'application/json');
   var body = {
     DateDebut: Co.dateDebut, DateFin:Co.dateFin,Statut:Co.statut,Justification:Co.justification,IdEploye:Co.idEploye,IdAdmine:Co.idAdmine,IdConger:Co.idConger

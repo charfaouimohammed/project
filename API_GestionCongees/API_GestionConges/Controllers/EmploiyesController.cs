@@ -71,19 +71,28 @@ namespace API_GestionConges.Controllers
 
         [HttpPost]
         [Route("login")]
-        public async Task<ActionResult<Emploiyes>>Login(Emploiyes emploiyes)
+        public async Task<object>Login(Emploiyes emploiyes)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            var employiesDB = _context.Emploiyes.SingleOrDefault(c => c.Username == emploiyes.Username && c.Passworld == emploiyes.Passworld);
-            if (employiesDB==null)
+            dynamic obj = null;
+            if (emploiyes.IsAdmin)
             {
-                return employiesDB;
+                obj = _context.Admines.SingleOrDefault(c => c.Username == emploiyes.Username && c.Passworld == emploiyes.Passworld);
+              
             }
-            return Ok(employiesDB);
+            else
+            {
+                obj = _context.Emploiyes.SingleOrDefault(c => c.Username == emploiyes.Username && c.Passworld == emploiyes.Passworld);
+            }
+            if(obj==null)
+                return BadRequest("Not autorized");
+
+            return Ok(obj);
         }
+
         // PUT: api/Emploiyes/5
         [HttpPut("{id}")]
         public async Task<IActionResult> PutEmploiyes([FromRoute] int id, [FromBody] Emploiyes emploiyes)
